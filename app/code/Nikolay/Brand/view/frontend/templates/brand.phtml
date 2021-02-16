@@ -18,11 +18,9 @@ if(!is_null($idValue)) :
     $brands = $block->getBrandPage();?>
     <div class="brands">'
     <?php foreach ($brands as $brand) : ?>
-
-              <a class="brand" href="<?=$block->getUrl('brands/' .$brand->getName(). '.html')?>">
-                  <img class="img" src="<?=$brand->getImageUrls()?>" alt="">
-              </a>
-
+        <a class="brand" href="<?=$block->getUrl('brands/' .$brand->getName(). '.html')?>">
+          <img class="img" src="<?=$brand->getImageUrls()?>" alt="">
+        </a>
     <?php endforeach;?>
     </div>
 <?php endif;?>
