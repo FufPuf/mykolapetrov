@@ -3,24 +3,37 @@
  * @var Nikolay\Brand\Block\Brand $block
  */
 ?>
-
+<script type="text/x-magento-init">
+{
+    "#accordion-brand": {
+            "accordion":
+            {
+                "active": 1,
+                "deactivate": 1
+            }
+    }
+}
+</script>
 <?php
 
-$idValue = $block->getParam();
-if(!is_null($idValue)) :
-    $brand = $block->getBrandPage(); ?>
-    <div class="brands">
-       <img class="img" style="width: 300px" src="<?=$brand->getImageUrls()?>" alt="">
-       <h1 class="brand_name"><?=$brand->getName()?></h1>
-       <p class="desc"><?=$brand->getDescription()?></p>
-    </div>
-<?php else :
-    $brands = $block->getBrandPage();?>
-    <div class="brands">'
+$brands = $block->getBrandPage();?>
+<div id="accordion-brand" class="brands">
+    <div class="brands-list">
+        <?php foreach ($brands as $brand) : ?>
+        <div data-role="collapsible">
+            <div class="brand-title" data-role="title">
+                <img src="<?=$brand->getImageUrls()?>" alt="">
+            </div>
+        </div>
+        <?php endforeach;?>
+        </div>
     <?php foreach ($brands as $brand) : ?>
-        <a class="brand" href="<?=$block->getUrl('brands/' .$brand->getName(). '.html')?>">
-          <img class="img" src="<?=$brand->getImageUrls()?>" alt="">
-        </a>
-    <?php endforeach;?>
+    <div class="brand-content" data-role="content">
+        <img style="width: 200px" src="<?=$brand->getImageUrls()?>" alt="">
+        <div>
+            <h2><?=$brand->getBrandName()?></h2>
+            <p class="desc"><?=$brand->getDescription()?></p>
+        </div>
     </div>
-<?php endif;?>
+<?php endforeach;?>
+</div>
