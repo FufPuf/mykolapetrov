@@ -6,13 +6,13 @@
 
 <div class="nikolay-checkout-success-container">
     <div class="nikolay-checkout-success-block">
-        <p><strong>ORDER DETAILS</strong></p>
-        <p>Your order will be delivered within 1-2 days. Please make sure that you have entered your complete address and correct contact details, as this will reduce any potential delays in your shipment.</p>
+        <p><strong><?=$block->escapeHtml('ORDER DETAILS')?></strong></p>
+        <p><?= $block->escapeHtml('Your order will be delivered within 1-2 days. Please make sure that you have entered your complete address and correct contact details, as this will reduce any potential delays in your shipment.')?></p>
     </div>
     <div class="nikolay-checkout-success-block">
         <a href="<?=$block->getUrl('promotion');?>">
-        <p><strong>INVITE FRIENDS, GET REVARDS!<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ic_chevron_right_48px.svg/768px-Ic_chevron_right_48px.svg.png" alt=""></strong></p>
-        <p>100$ Store Credit for you, 100$ Store Credit for your friends. Tell your friends to enter your coupon and They will receive 30% of their first purchase</p>
+        <p><strong><?= $block->escapeHtml('INVITE FRIENDS, GET REWARDS!')?><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ic_chevron_right_48px.svg/768px-Ic_chevron_right_48px.svg.png" alt=""></strong></p>
+        <p><?= $block->escapeHtml('100$ Store Credit for you, 100$ Store Credit for your friends. Tell your friends to enter your coupon and They will receive 30% of their first purchase')?></p>
         </a>
     </div>
 </div>

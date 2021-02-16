@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ */
 $sum = 100;
 
 ?>
@@ -8,7 +10,7 @@ $sum = 100;
 <div class="promo-content">
     <div class="right-content-promotion-column">
         <form class="form" action="/" method="post">
-            <p>Refer a friend using this unique link</p>
+            <p><?=$block->escapeHtml('Refer a friend using this unique link')?></p>
             <div style="display: flex; gap: 10px">
                 <label style="flex-grow: 1;">
                     <input type="text" name="unique_link">
@@ -19,7 +21,7 @@ $sum = 100;
             </div>
         </form>
 
-        <p>Share your unique link on social</p>
+        <p><?=$block->escapeHtml('Share your unique link on social')?></p>
         <div class="social-links">
             <img src="https://toppng.com/uploads/preview/facebook-icon-white-circle-facebook-logo-11562983298tkkvnplpku.png" alt="">
             <img src="https://image.flaticon.com/icons/png/512/60/60580.png" alt="">
@@ -28,15 +30,15 @@ $sum = 100;
     <div class="left-content-promotion-column">
         <div class="earned-promo-block">
             <h3><?=$sum . '$';?></h3>
-            <h4>EARNED</h4>
+            <h4><?=$block->escapeHtml('EARNED')?></h4>
         </div>
         <div class="achievement-promo-block">
-            <p>Your achievement</p>
+            <p><?=$block->escapeHtml('Your achievement')?></p>
             <div class="achievement-promo-ul-block">
                 <ul class="title-ul-list">
-                    <li>Referral click</li>
-                    <li>Referral Pending</li>
-                    <li>Referral approved</li>
+                    <li><?=$block->escapeHtml('Referral click')?></li>
+                    <li><?=$block->escapeHtml('Referral Pending')?></li>
+                    <li><?=$block->escapeHtml('Referral approved')?></li>
                 </ul>
                 <ul class="count-ul-list">
                     <li>3</li>
