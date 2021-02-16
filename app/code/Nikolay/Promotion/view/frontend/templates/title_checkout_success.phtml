@@ -1,0 +1,17 @@
+<?php
+    /**
+     * @var Magento\Checkout\Block\Onepage\Success $block
+     */
+?>
+<div class="title-checkout-success">
+    <img src="https://cdn.icon-icons.com/icons2/1522/PNG/512/tickcirclelinear_106244.png" alt="">
+    <h2><strong><?=$block->escapeHtml(__('ORDER CONFIRMATION'))?></strong></h2>
+    <p><?=$block->escapeHtml(__('Thank you for shopping'))?></p>
+    <?php if ($block->getOrderId()):?>
+        <?php if ($block->getCanViewOrder()) :?>
+            <p><?= __('Order Number: %1.', sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeHtml($block->getViewOrderUrl()), $block->escapeHtml($block->getOrderId()))) ?></p>
+        <?php  else :?>
+            <p><?= __('Order Number: <span>%1</span>.', $block->escapeHtml($block->getOrderId())) ?></p>
+        <?php endif;?>
+    <?php endif;?>
+</div>

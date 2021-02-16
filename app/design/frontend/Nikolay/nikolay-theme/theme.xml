@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Vaimo Brand
+*
+* @author Petrov Mykola Olegovich mykola.petrov@vaimo.com
+* @package Nikolay_HelloWorld
+* @copyright Copyright (c) 2021 Vaimo (http://www.vaimo.com)
+*/
+-->
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
+    <title>Nikolay Theme</title>
+    <parent>Magento/luma</parent>
+</theme>

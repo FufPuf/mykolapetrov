@@ -1,0 +1,65 @@
+<?php
+/**
+ * @var Nikolay\Brand\Block\Brand $block
+ */
+?>
+
+<style>
+
+.brands {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+.brand {
+    display: block;
+    float: left;
+    padding: 20px;
+    width: 250px;
+}
+
+.brand_name {
+    padding-left: 10px;
+    width: 100%;
+    font-size: 3em;
+}
+
+.img {
+    display: block;
+    margin: 10px 20px 10px 10px;
+    width: 100%;
+}
+
+.desc {
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+</style>
+
+<?php
+
+$idValue = $block->getParam();
+if(!is_null($idValue)) {
+    $brand = $block->getBrandPage();
+    echo '
+                <div class="brands">
+                   <img class="img" style="width: 300px" src="' . $brand->getImageUrls() . '" alt="">
+                   <h1 class="brand_name">' . $brand->getName() . '</h1>
+                   <p class="desc">' . $brand->getDescription() . '</p>
+                </div>
+          ';
+} else {
+    $brands = $block->getBrandPage();
+    echo '<div class="brands">';
+    foreach ($brands as $brand) {
+        echo '
+              <a class="brand" href="'. $block->getUrl('brands/' .$brand->getName(). '.html') .'">
+                  <img class="img" src="' . $brand->getImageUrls() . '" alt="">
+              </a>
+              ';
+    }
+    echo '</div>';
+}

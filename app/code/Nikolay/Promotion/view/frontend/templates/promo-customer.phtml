@@ -1,0 +1,51 @@
+<?php
+
+$sum = 100;
+
+?>
+
+
+<div class="promo-content">
+    <div class="right-content-promotion-column">
+        <form class="form" action="/" method="post">
+            <p>Refer a friend using this unique link</p>
+            <div style="display: flex; gap: 10px">
+                <label style="flex-grow: 1;">
+                    <input type="text" name="unique_link">
+                </label>
+                <label>
+                    <input type="submit" name="button" value="COPY">
+                </label>
+            </div>
+        </form>
+
+        <p>Share your unique link on social</p>
+        <div class="social-links">
+            <img src="https://toppng.com/uploads/preview/facebook-icon-white-circle-facebook-logo-11562983298tkkvnplpku.png" alt="">
+            <img src="https://image.flaticon.com/icons/png/512/60/60580.png" alt="">
+        </div>
+    </div>
+    <div class="left-content-promotion-column">
+        <div class="earned-promo-block">
+            <h3><?=$sum . '$';?></h3>
+            <h4>EARNED</h4>
+        </div>
+        <div class="achievement-promo-block">
+            <p>Your achievement</p>
+            <div class="achievement-promo-ul-block">
+                <ul class="title-ul-list">
+                    <li>Referral click</li>
+                    <li>Referral Pending</li>
+                    <li>Referral approved</li>
+                </ul>
+                <ul class="count-ul-list">
+                    <li>3</li>
+                    <li>0</li>
+                    <li>0</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
