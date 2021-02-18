@@ -8,32 +8,36 @@
     "#accordion-brand": {
             "accordion":
             {
-                "active": 1,
-                "deactivate": 1
+                "active": 1
             }
+    },
+
+    ".carousel": {
+            "carousel": {}
     }
 }
-</script>
-<?php
 
-$brands = $block->getBrandPage();?>
+</script>
+
+<?php
+$brands = $block->getBrandPage(); ?>
 <div id="accordion-brand" class="brands">
-    <div class="brands-list">
+    <div class="brands-list carousel">
         <?php foreach ($brands as $brand) : ?>
-        <div data-role="collapsible">
-            <div class="brand-title" data-role="title">
-                <img src="<?=$brand->getImageUrls()?>" alt="">
+            <div data-role="collapsible">
+                <div class="brand-title" data-role="title">
+                    <img src="<?= $brand->getImageUrls() ?>" alt="">
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?php foreach ($brands as $brand) : ?>
+        <div class="brand-content" data-role="content">
+            <img style="width: 200px" src="<?= $brand->getImageUrls() ?>" alt="">
+            <div>
+                <h2><?= $brand->getBrandName() ?></h2>
+                <p class="desc"><?= $brand->getDescription() ?></p>
             </div>
         </div>
-        <?php endforeach;?>
-        </div>
-    <?php foreach ($brands as $brand) : ?>
-    <div class="brand-content" data-role="content">
-        <img style="width: 200px" src="<?=$brand->getImageUrls()?>" alt="">
-        <div>
-            <h2><?=$brand->getBrandName()?></h2>
-            <p class="desc"><?=$brand->getDescription()?></p>
-        </div>
-    </div>
-<?php endforeach;?>
+    <?php endforeach; ?>
 </div>
