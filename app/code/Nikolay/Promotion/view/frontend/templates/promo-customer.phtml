@@ -2,26 +2,39 @@
 /**
  * @var Magento\Framework\View\Element\Template $block
  */
+
 $sum = 100;
 
 ?>
+<script type="text/x-magento-init">
+{
+            "*": {
+                "generate": {}
+            },
+
+            "#copy": {
+                "copy": {}
+            }
+}
+</script>
 
 
 <div class="promo-content">
     <div class="right-content-promotion-column">
         <form class="form" action="/" method="post">
-            <p><?=$block->escapeHtml('Refer a friend using this unique link')?></p>
+            <p><?=$block->escapeHtml(__('Refer a friend using this unique link'))?></p>
             <div style="display: flex; gap: 10px">
-                <label style="flex-grow: 1;">
-                    <input type="text" name="unique_link">
-                </label>
-                <label>
-                    <input type="submit" name="button" value="COPY">
-                </label>
+
+                <input type="text" id="unique_link" value="">
+
+                <input type="submit" id="generate" value="GENERATE">
+
+                <input style="display: none" type="submit" id="copy" value="COPY">
+
             </div>
         </form>
 
-        <p><?=$block->escapeHtml('Share your unique link on social')?></p>
+        <p><?=$block->escapeHtml(__('Share your unique link on social'))?></p>
         <div class="social-links">
             <img src="https://toppng.com/uploads/preview/facebook-icon-white-circle-facebook-logo-11562983298tkkvnplpku.png" alt="">
             <img src="https://image.flaticon.com/icons/png/512/60/60580.png" alt="">
@@ -30,15 +43,15 @@ $sum = 100;
     <div class="left-content-promotion-column">
         <div class="earned-promo-block">
             <h3><?=$sum . '$';?></h3>
-            <h4><?=$block->escapeHtml('EARNED')?></h4>
+            <h4><?=$block->escapeHtml(__('EARNED'))?></h4>
         </div>
         <div class="achievement-promo-block">
-            <p><?=$block->escapeHtml('Your achievement')?></p>
+            <p><?=$block->escapeHtml(__('Your achievement'))?></p>
             <div class="achievement-promo-ul-block">
                 <ul class="title-ul-list">
-                    <li><?=$block->escapeHtml('Referral click')?></li>
-                    <li><?=$block->escapeHtml('Referral Pending')?></li>
-                    <li><?=$block->escapeHtml('Referral approved')?></li>
+                    <li><?=$block->escapeHtml(__('Referral click'))?></li>
+                    <li><?=$block->escapeHtml(__('Referral Pending'))?></li>
+                    <li><?=$block->escapeHtml(__('Referral approved'))?></li>
                 </ul>
                 <ul class="count-ul-list">
                     <li>3</li>

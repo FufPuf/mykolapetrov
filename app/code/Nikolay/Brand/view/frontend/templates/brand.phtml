@@ -26,17 +26,17 @@ $brands = $block->getBrandPage(); ?>
         <?php foreach ($brands as $brand) : ?>
             <div data-role="collapsible">
                 <div class="brand-title" data-role="title">
-                    <img src="<?= $brand->getImageUrls() ?>" alt="">
+                    <img src="<?= __($brand->getImageUrls()) ?>" alt="">
                 </div>
             </div>
         <?php endforeach; ?>
     </div>
     <?php foreach ($brands as $brand) : ?>
         <div class="brand-content" data-role="content">
-            <img style="width: 200px" src="<?= $brand->getImageUrls() ?>" alt="">
+            <img style="width: 200px" src="<?= __($brand->getImageUrls()) ?>" alt="">
             <div>
-                <h2><?= $brand->getBrandName() ?></h2>
-                <p class="desc"><?= $brand->getDescription() ?></p>
+                <h2><?= __($brand->getBrandName()) ?></h2>
+                <p class="desc"><?= __($brand->getDescription()) ?></p>
             </div>
         </div>
     <?php endforeach; ?>
