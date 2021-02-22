@@ -9,9 +9,10 @@
             <resource>Nikolay_Brand::settings</resource>
             <group id="promo_mein_settings" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Join Configuration</label>
-                <field id="promo_enabled" translate="label" type="text" sortOrder="10"
+                <field id="promo_enabled" translate="label" type="select" sortOrder="10"
                        showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enabled</label>
+                    <source_model>Nikolay\Promotion\Model\Config\Source\EnableList</source_model>
                 </field>
             </group>
         </section>

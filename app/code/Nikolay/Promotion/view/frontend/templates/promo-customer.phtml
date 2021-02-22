@@ -1,6 +1,6 @@
 <?php
 /**
- * @var Magento\Framework\View\Element\Template $block
+ * @var Nikolay\Promotion\Block\Promotion $block
  */
 
 $sum = 100;
@@ -17,20 +17,16 @@ $sum = 100;
             }
 }
 </script>
-
+<?php if($block->getConfValue()) :?>
 
 <div class="promo-content">
     <div class="right-content-promotion-column">
         <form class="form" action="/" method="post">
             <p><?=$block->escapeHtml(__('Refer a friend using this unique link'))?></p>
             <div style="display: flex; gap: 10px">
-
                 <input type="text" id="unique_link" value="">
-
                 <input type="submit" id="generate" value="GENERATE">
-
                 <input style="display: none" type="submit" id="copy" value="COPY">
-
             </div>
         </form>
 
@@ -63,4 +59,4 @@ $sum = 100;
     </div>
 </div>
 
-
+<?php endif; ?>
